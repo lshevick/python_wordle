@@ -107,7 +107,6 @@ def play_game(wordList):
             print('Congrats! You got it!')
             break
         else:
-            print(mystery)
             check_guess(mystery, guess)
             update_table(guessed_words)
             guesses += 1
@@ -120,16 +119,6 @@ def play_game(wordList):
             print(f'Sorry, the word was {magic}')
             break
 
-
-
-
-# play_game()  
-
-# display_game(mystery)
-# # check_guess(mystery, 'glass')
-# print(game_table[0])
-
-# print(check_guess(mystery, 'glass'))
 
 if __name__ == '__main__':
     wordList = loadWords()
