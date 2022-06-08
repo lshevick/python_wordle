@@ -14,7 +14,6 @@ mystery = list(word)
 game_table = []
 guessed_words = []
 blanks = []
-submission = []
 
 def green_letter(l):
     return f'\033[1;30;42m {l} '
@@ -38,11 +37,12 @@ def set_game_table(mystery):
 
 def display_game():
     global game_table
-    for n, i in enumerate(game_table):
-        print(game_table[n])
+    for i in range(len(game_table)):
+        print(game_table[i])
 
 def check_guess(mystery, guess):
-    global submission, guessed_words
+    global guessed_words
+    submission = []
 
     for i, l in enumerate(guess):
         if guess[i] == mystery[i]:
@@ -55,9 +55,6 @@ def check_guess(mystery, guess):
     guessed_words.append(submission_string)
     return guessed_words
 
-# def add_sub(submision):
-#     guessed_words.append(submision)
-#     return guessed_words
 
 def update_table(guessed_words):
     global game_table
@@ -84,7 +81,6 @@ def play_game():
             continue
         else:
             check_guess(mystery, guess)
-            # add_sub(submission)
             update_table(guessed_words)
             guesses += 1
 
